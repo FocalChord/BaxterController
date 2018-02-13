@@ -1,0 +1,15 @@
+#!/bin/sh
+
+VERSION=v1.1.1
+
+cd ~/ros_ws/src
+
+wstool set baxter -v $VERSION -y
+wstool set baxter_tools -v $VERSION -y
+wstool set baxter_interface -v $VERSION -y
+wstool set baxter_examples -v $VERSION -y
+wstool set baxter_common -v $VERSION -y
+wstool set baxter_simulator -v v0.9.1.1 -y
+wstool update
+
+wstool info
