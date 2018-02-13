@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.dinith.baxtercontroller.XyzActivity">
+
+    <com.example.dinith.baxtercontroller.JoystickView
+        android:id="@+id/joystickXyz"
+        android:layout_width="170dp"
+        android:layout_height="172dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/xPercentXyz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginStart="184dp"
+        android:text="xPercent"
+        android:textAlignment="textStart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/yPercentXyz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginStart="336dp"
+        android:text="yPercent"
+        android:textAlignment="textEnd"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <Button
+        android:id="@+id/headRightBtnXyz"
+        android:layout_width="110dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/custom_button"
+        android:text="@string/head_right"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/headLeftBtnXyz"
+        android:layout_width="110dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/custom_button"
+        android:text="@string/head_left"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/xyzConnectionStatusText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="44dp"
+        android:text="status "
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/xyzTitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="XYZ Control"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Switch
+        android:id="@+id/armSwitchXyz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="56dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:switchMinWidth="100dp"
+        android:textOff="Left arm"
+        android:textOn="Right arm"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/zUpBtn"
+        android:layout_width="50dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginStart="50dp"
+        android:background="@drawable/custom_button"
+        android:text="Up"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/zDownBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/zDownBtn"
+        android:layout_width="50dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginStart="50dp"
+        android:background="@drawable/custom_button"
+        android:text="Down"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/gripperRightBtnXyz"
+        android:layout_width="65dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="20dp"
+        android:text="Right Grip"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="@+id/headRightBtnXyz"
+        app:layout_constraintTop_toBottomOf="@+id/headRightBtnXyz" />
+
+    <Button
+        android:id="@+id/gripperLeftBtnXyz"
+        android:layout_width="65dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="20dp"
+        android:text="left Grip"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="@+id/headLeftBtnXyz"
+        app:layout_constraintTop_toBottomOf="@+id/headLeftBtnXyz" />
+
+    <Button
+        android:id="@+id/rollBtn"
+        android:layout_width="74dp"
+        android:layout_height="42dp"
+        android:layout_marginBottom="200dp"
+        android:layout_marginStart="190dp"
+        android:text="roll+"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/rollBtn2"
+        android:layout_width="74dp"
+        android:layout_height="42dp"
+        android:layout_marginBottom="200dp"
+        android:layout_marginStart="325dp"
+        android:text="roll-"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/yawBtn"
+        android:layout_width="74dp"
+        android:layout_height="42dp"
+        android:layout_marginBottom="100dp"
+        android:layout_marginStart="190dp"
+        android:text="Yaw+"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/yawBtn2"
+        android:layout_width="74dp"
+        android:layout_height="42dp"
+        android:layout_marginBottom="100dp"
+        android:layout_marginStart="325dp"
+        android:text="Yaw-"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/pitchBtn2"
+        android:layout_width="74dp"
+        android:layout_height="42dp"
+        android:layout_marginBottom="150dp"
+        android:layout_marginStart="325dp"
+        android:text="Pitch-"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/pitchBtn"
+        android:layout_width="74dp"
+        android:layout_height="42dp"
+        android:layout_marginBottom="150dp"
+        android:layout_marginStart="190dp"
+        android:text="Pitch+"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
