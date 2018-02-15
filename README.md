@@ -17,6 +17,35 @@ The application's main goal was to let a user interact and control Baxter's arm/
 
 This app can either be used on the Baxter robot or the Gazebo simulator on ROS.
 
+### **Installing the app on your android phone**
+
+First, open up Android Studio and open the BaxterController folder on the repository as a project.
+
+Now you might get an error when opening the project however to get around this you can go (Follow the gif):
+
+![jj](https://user-images.githubusercontent.com/31643423/36241362-b216391e-127a-11e8-9c2a-7d4d7efc713c.gif)
+
+Now press the play button on the upper right, and connect your Android device and click on it and press ok. This should install the required APK file onto your android phone and you are now ready to go.
+
+Some remarks:
+
+To remove the yellow warning highlights  (shown in the picture below) (caused because of warning to call OnClick() method, which is not needed in this case)
+`File  >  Settings  >  Editor  >  Inspections  >  Android  >  Lint  >  Accessibility  >  Uncheck “Accessibility in Custom Views”, then click Apply and OK`
+
+<img width="1388" alt="screen shot 2018-02-15 at 6 15 39 pm" src="https://user-images.githubusercontent.com/31643423/36241609-46f939ae-127c-11e8-9f3e-b5ea0ae7de49.png">
+
+
+If you have a different sized phone and there are jumbled controls then follow these instructions:
+<img width="1190" alt="screen shot 2018-02-15 at 6 18 04 pm" src="https://user-images.githubusercontent.com/31643423/36241660-9951cd92-127c-11e8-8a51-e4f0390ec10d.png">
+
+
+-	Jumbled controls – rearrange/resize the buttons to fit the desired screen size
+-	(Change the screen size displayed by the layout using the popup tab shown below to that of your device)
+-	Move/resize the buttons to fit your screen using the mouse to click and drag, or in the text version of the xml file at the bottom of the screen
+
+
+
+
 ## Using Gazebo Simulator with the App
 
 ### **Setting up Ubuntu**
@@ -53,6 +82,8 @@ Open up Terminal in Ubuntu and go to the link and follow these steps:
     - Go through this step to make sure the ROS environment is working. 
 
 ### **Setting up the Socket Server** 
+ 
+- This socket server is a modified version of the Socket Server found here: https://github.com/AndrewChenUoA/baxter_socket_server
 
 In the repo: There is a folder called Python Socket Server: 
 
@@ -125,7 +156,9 @@ Use these commands on terminal:
 
 Now if everything is successful then this should be the output:
 
-~~~ remember to add screenshot ~~~
+<img width="1835" alt="screen shot 2018-02-13 at 10 58 03 am" src="https://user-images.githubusercontent.com/31643423/36240226-1f723608-1275-11e8-99f5-8ca7e3742561.png">
+
+(Terminal on the left and Simulator on the right).
 
 If this does not work, then keep restarting the simulator by doing this:
 
@@ -151,6 +184,8 @@ For this part we are going to be doing mostly the same steps as before, so follo
 - **Setting up ROS Workstation and Gazebo Simulator**
 - **Setting up the Socket Server**
 
+
+
 After you have gone through these steps: go open up a Terminal window in Ubuntu and type in: 
 
 - ` cd ros_ws `
@@ -160,6 +195,40 @@ and this windows should pop up:  <img width="729" alt="screen shot 2018-02-12 at
 
 From here you will have to change `baxter_hostname=...` to your Baxter robot's hostname which can be found on the back of your robot and `your_ip=...` can be found via terminal or in settings (your ip address).
 
+Now we have to copy all the server files onto Baxter:
+
+Use SCP to copy these files onto baxter:
+- socket_server.py
+- baxter_arm_control.py
+- sonar_interface.py
+
+ONLY NEED TO RUN socket_server.py (the other two files are dependencies)
+
+After running the socket server you can use the android app, so find your IP Address and Port Number and go into the settings activity and put those in, and then go to either joint control or xyz control and use either one to control the robots movements (more indepth photos below).
+
+
+If:
+-	Arm movement slows down
+-	Delayed arm movement/movement after controls are released
+-	“Broken pipe” error
+-	Port in use
+    - Restart Server (Change port number if needed)
+-	Using ‘Xyz’ controls (USE WITH CAUTION – arm jerking)
+    - MIGHT NEED TO TWEAK COMMANDS ON SERVER/ANDROID (see comments in code)
+-	Simulator says missing parts or something like that
+    - COMMENT OUT MISSING PARTS IN socket_server.py
 
 
 
+
+
+
+## Features of the App (Controllers)
+
+- Joint Control
+
+<img width="1430" alt="screen shot 2018-02-15 at 6 22 19 pm" src="https://user-images.githubusercontent.com/31643423/36241784-2eaaac60-127d-11e8-851a-efc4d43e1915.png">
+
+- XYZ Control
+
+<img width="1446" alt="screen shot 2018-02-15 at 6 22 52 pm" src="https://user-images.githubusercontent.com/31643423/36241797-4721e812-127d-11e8-9cdc-00ce8535a520.png">
